@@ -58,17 +58,17 @@
     display: flex;
     justify-content: space-between;
     background-color: $white;
-    border-bottom: solid 1px #eeeeee;
+    border-bottom: solid 1px $border-g;
     &--group {
       margin: 35px 40px 0 40px;
       .name {
         font-size: 20px;
-        color: #333333;
+        color: $font-dg;
         margin-bottom: 15px;
       }
       .member {
         font-size: 12px;
-        color: #999999;
+        color: $font-g
       }
     }
     .edit--btn {
@@ -78,8 +78,8 @@
         width: 72px;
         font-size: 16px;
         padding: 0 20px;
-        color: #38aef0;
-        border-color: #38aef0;
+        color: $btn-bl;
+        border-color: $btn-bl;
         background-color: none;
       }
     }
@@ -89,18 +89,18 @@
     width: 100%;
     padding-top: 35px;
     padding-left: 40px;
-    background-color: #fafafa;
+    background-color: $back-wh;
     .comenter {
       margin-bottom: 12px;
       display: flex;
       &--username {
         font-size: 16px;
-        color: #333333;
+        color: $font-dg;
         margin-right: 10px;
       }
       &--date {
         font-size: 12px;
-        color: #999999;
+        color: $font-g;
       }
     }
     .message {
@@ -112,7 +112,7 @@
   &__message {
     height: 90px;
     width: 100%;
-    background-color: #d2d2d2;
+    background-color: $back-rg;
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
@@ -147,7 +147,7 @@
         width: 100px;
         font-size: 16px;
         color: $white;
-        background-color: #38aef0;
+        background-color: $btn-bl;
       }
     }
   }
