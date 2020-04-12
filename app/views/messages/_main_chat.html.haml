@@ -1,0 +1,34 @@
+.main
+  .main__header
+    .main__header--group
+      .name
+        test
+      .member
+        Member:aaa
+    .edit--btn
+      =link_to "#" do
+        %button{type: "button"} Edit
+  .main__disply
+    .comenter
+      .comenter--username
+        qqq
+      .comenter--date
+        %datetime="2020/04/10(Fri) 22:01:10"
+    .message
+      アイウエオ
+    .comenter
+      .comenter--username
+        aaa
+      .comenter--date
+        %datetime="2020/04/11(Sat) 22:01:10"
+    .message
+      なにぬねの
+  .main__message
+    .main__message--box
+      %input{claas: :text, placeholder: "type a message", type: :text}
+      %label{class: "icon"}
+        =icon('far', 'image')
+        %input{type: "file", class: "icon_image"}
+    .send--btn
+      =link_to "#" do
+        %button{type: "button"} Send
