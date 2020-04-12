@@ -1,0 +1,18 @@
+.side
+  .side__header
+    .side__header--text
+      .side__header--text--username
+        masa
+        -# %span= current_user.nickname
+      .side__header--text--icon
+        = link_to "#" do
+          =icon('far', 'edit')
+        %span<>
+        =link_to "#" do
+          =icon('fas', 'cog')
+  .side__groups
+    .group
+      .group--name
+        aaa
+      .group--last--message
+        bbb
