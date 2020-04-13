@@ -2,12 +2,12 @@
   .side__header
     .side__header--text
       .side__header--text--username
-        masa
+        = current_user.name
       .side__header--text--icon
         = link_to "#" do
           =icon('far', 'edit')
         %span<>
-        =link_to "#" do
+        =link_to edit_user_path(current_user) do
           =icon('fas', 'cog')
   .side__groups
     .group
