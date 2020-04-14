@@ -37,13 +37,16 @@
     background-color: $backcolor-g;
     .group {
       padding: 20px 20px 40px;
-      color: $white;
-      &--name {
-        font-size: 15px;
-        margin-bottom: 5px;
-      }
-      &--last--message {
-        font-size: 11px;
+      a {
+        color: $white;
+        text-decoration: none;
+        &--name {
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &--last--message {
+          font-size: 11px;
+        }
       }
     }
   }
