@@ -2,33 +2,22 @@
   .main__header
     .main__header--group
       .name
-        test
+        = @group.name
       .member
-        Member:aaa
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .edit--btn
-      =link_to "#" do
-        %button{type: "button"} Edit
+      =link_to 'Edit', edit_group_path(@group) 
   .main__disply
-    .comenter
-      .comenter--username
-        qqq
-      .comenter--date
-        %datetime="2020/04/10(Fri) 22:01:10"
-    .message
-      アイウエオ
-    .comenter
-      .comenter--username
-        aaa
-      .comenter--date
-        %datetime="2020/04/11(Sat) 22:01:10"
-    .message
-      なにぬねの
+    = render @messages
+
   .main__message
-    .main__message--box
-      %input{claas: :text, placeholder: "type a message", type: :text}
-      %label{class: "icon"}
-        =icon('far', 'image')
-        %input{type: "file", class: "icon_image"}
-    .send--btn
-      =link_to "#" do
-        %button{type: "button"} Send
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'main__message--box', placeholder: 'type a message'
+      .icon
+        = f.label :image, class: 'icon_image' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'send--btn'
+
