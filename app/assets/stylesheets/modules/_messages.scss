@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .side {
-  height: calc(100vh + 90px);
+  height: 100%;
   width: 300px;
   float: left;
   &__header {
@@ -33,8 +33,9 @@
       }
     }
   &__groups {
-    height: 100%;
+    height: calc(100vh - 100px);
     background-color: $backcolor-g;
+    overflow: scroll;
     .group {
       padding: 20px 20px 40px;
       a {
@@ -52,7 +53,7 @@
   }
 }
 .main {
-  height: 100vh;
+  height: 100%;
   width: calc(100vw - 300px);
   float: right;
   &__header {
@@ -93,9 +94,10 @@
     }
   }
   &__disply {
-    height: 100%;
+    height: calc(100vh - 190px);
     width: 100%;
     background-color: $back-wh;
+    overflow: scroll;
     .comenter {
       padding-top: 35px;
       margin-bottom: 12px;
