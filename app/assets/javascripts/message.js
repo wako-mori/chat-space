@@ -63,6 +63,7 @@ $(function(){
     })
   })
   var reloadMessages = function(){
+    console.log("OK")
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
     var last_message_id = $('.each__disply:last').data("message-id");
     console.log(last_message_id)
