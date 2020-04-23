@@ -79,7 +79,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.main__disply').append(insertHTML);
-        $('.main__disply').animate({ scrollTop: $('.each__disply')[0].scrollHeight});
+        $('.main__disply').animate({ scrollTop: $('.main__disply')[0].scrollHeight});
       }
     })
     .fail(function(){
