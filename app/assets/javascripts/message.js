@@ -52,10 +52,10 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      var html =buildHTML(data);
+      var html = buildHTML(data);
       $('.main__disply').append(html);
       $('.main__disply').animate({ scrollTop: $('.main__disply')[0].scrollHeight});
-      $('#message_content').val("");
+      $('form')[0].reset();
       $('.send--btn').prop('disabled', false);
     })
     .fail(function(){
@@ -63,28 +63,28 @@ $(function(){
     })
   })
   var reloadMessages = function(){
-    var last_message_id = $('.each__disply:last').data("message-id");
-    $.ajax({
-      url: "api/messages",
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(messages){
-      if (messages.length !== 0) {
-        var insertHTML = '';
-        $.each(messages, function(i, message){
-          insertHTML += buildHTML(message)
-        });
-        $('.main__disply').append(insertHTML);
-        $('.main__disply').animate({ scrollTop: $('.main__disply')[0].scrollHeight});
-      }
-    })
-    .fail(function(){
-      alert('error');
-    });
+    if(window.location.href.match(/messages/)){
+      var last_message_id = $('.each__disply:last').data("message-id");
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages){
+        if (messages.length !== 0) {
+          var insertHTML = '';
+          $.each(messages, function(i, message){
+            insertHTML += buildHTML(message)
+          });
+          $('.main__disply').append(insertHTML);
+          $('.main__disply').animate({ scrollTop: $('.main__disply')[0].scrollHeight});
+        }
+      })
+      .fail(function(){
+        alert('error');
+      });
+    }
   };
-  if(documennt.location.href.match(/\/groups\/\d+\/messages/)){
     setInterval(reloadMessages, 7000);
-  }
 });
