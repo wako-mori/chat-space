@@ -64,7 +64,7 @@ $(function(){
   })
   var reloadMessages = function(){
     if(window.location.href.match(/messages/)){
-    var last_message_id = $('.disply:last').data("message-id");
+    var last_message_id = $('.each__disply:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
